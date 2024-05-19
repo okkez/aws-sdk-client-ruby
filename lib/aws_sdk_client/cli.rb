@@ -1,4 +1,4 @@
-module AwsSdk
+module AwsSdkClient
   module CLI
   end
 end

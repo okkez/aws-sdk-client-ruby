@@ -1,5 +1,4 @@
-
-module AwsSdk
+module AwsSdkClient
   module CLI
     VERSION = "0.1.0"
   end

@@ -4,7 +4,7 @@ require "dry/cli"
 require "json"
 require "rexml"
 
-module AwsSdk
+module AwsSdkClient
   module CLI
     class Command < Dry::CLI::Command
       argument :service_name, required: true
