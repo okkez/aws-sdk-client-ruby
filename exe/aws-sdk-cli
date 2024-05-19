@@ -1,0 +1,5 @@
+#!/usr/bin/env ruby
+
+require "aws_sdk/cli"
+
+Dry::CLI.new(AwsSdk::CLI).call
