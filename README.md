@@ -7,7 +7,7 @@ Inspired by https://github.com/fujiwara/aws-sdk-client-go
 ## Installation
 
 ```sh
-gem install aws-sdk-ruby-cli
+gem install aws-sdk-client
 ```
 
 and install `aws-sdk-*` gems what you want.
