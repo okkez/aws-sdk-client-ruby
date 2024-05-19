@@ -18,6 +18,20 @@ gem install aws-sdk-s3
 gem install aws-sdk-ec2
 ```
 
+or using Budler
+
+```ruby
+# frozen_string_literal: true
+
+source "https://rubygems.org"
+
+gem "aws-sdk-client"
+# add `aws-sdk-*` gems what you want.
+gem "aws-sdk-s3"
+gem "aws-sdk-sts"
+gem "aws-sdk-iam"
+````
+
 ## Usage
 
 Example: S3
@@ -25,6 +39,8 @@ Example: S3
 ```sh
 aws-sdk-cli s3 list-objects-v2 '{"Bucket": "bucket-name", "MaxKeys": 10}'
 ```
+
+This will returns JSON as compact format.
 
 ## Development
 
