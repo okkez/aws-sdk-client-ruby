@@ -1,5 +1,6 @@
 require "active_support"
 require "active_support/core_ext"
+require "did_you_mean"
 require "dry/cli"
 require "json"
 require "rexml"
@@ -15,7 +16,18 @@ module AwsSdkClient
         require "aws-sdk-#{service_name}"
 
         service_class_name = service_name.capitalize
-        target_class = Aws.const_get(service_class_name)::Client
+        retries = 0
+        begin
+          target_class = Aws.const_get(service_class_name)::Client
+        rescue NameError => e
+          raise e if retries > 0
+
+          spell_checker = DidYouMean::SpellChecker.new(dictionary: Aws.constants.map(&:to_s))
+          candidates = spell_checker.correct(service_class_name)
+          service_class_name = candidates.first
+          retries += 1
+          retry
+        end
         unless api_name
           methods = target_class.instance_methods(false).sort.map do |m|
             m.to_s.dasherize

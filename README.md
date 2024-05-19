@@ -2,6 +2,8 @@
 
 This is PoC to run AWS APIs without writing code for specific AWS services.
 
+Inspired by https://github.com/fujiwara/aws-sdk-client-go
+
 ## Installation
 
 ```sh
