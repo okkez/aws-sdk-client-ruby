@@ -1,4 +1,4 @@
-# AwsSdk::CLI
+# AwsSdkClient
 
 This is PoC to run AWS APIs without writing code for specific AWS services.
 
@@ -37,7 +37,7 @@ gem "aws-sdk-iam"
 Example: S3
 
 ```sh
-aws-sdk-cli s3 list-objects-v2 '{"Bucket": "bucket-name", "MaxKeys": 10}'
+aws-sdk-client s3 list-objects-v2 '{"Bucket": "bucket-name", "MaxKeys": 10}'
 ```
 
 This will returns JSON as compact format.
